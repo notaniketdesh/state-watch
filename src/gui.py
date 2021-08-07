@@ -1,3 +1,4 @@
+from os import stat
 from tkinter import *
 
 class Window:
@@ -5,6 +6,7 @@ class Window:
     def __init__(self, width, height, title):
         self.window = Tk() 
         self.window.geometry(f'{width}x{height}')
+        self.title = title
         self.window.title(title)
         self.enter_state = ''
         self.state_name = ''
@@ -59,6 +61,23 @@ class Window:
         )
         submit_button.place(x=60)
         submit_button.pack(side=RIGHT)
+    
+    def create_info_page(self):
+        words = self.title.split(' ')
+        state_header = Label(
+            self.window,
+            text=f'Information for {words[2]}',
+            font=('MV Boli', 25, 'bold'),
+            fg='#046e0d'
+        )
+        state_header.pack()
+        column_headers = Label(
+            self.window,
+            text='Scientific Name\t\tCommon Name\t\tStatus',
+            font=('Arial', 18, 'bold')
+        )
+        column_headers.place(y=100)
+        column_headers.pack()
 
 
  

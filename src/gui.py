@@ -6,7 +6,7 @@ class Window:
         self.window = Tk() 
         self.window.geometry(f'{width}x{height}')
         self.window.title(title)
-        self.enter_state = 0
+        self.enter_state = ''
         self.state_name = ''
     
     def display(self):

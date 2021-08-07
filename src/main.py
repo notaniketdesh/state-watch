@@ -1,8 +1,8 @@
 from gui import Window
 
 def main():
-    window = Window(700, 800, "Endangered Species")
-    window.create_components()
+    window = Window(700, 400, "Endangered Species")
+    window.create_submit_page()
     window.display()
 
 if __name__ == '__main__':

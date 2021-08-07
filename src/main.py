@@ -5,5 +5,6 @@ window = Window(700, 400, "Endangered Species")
 window.create_submit_page()
 window.display()
 
-test = Scraper('NJ')
+scraper = Scraper(window.state_name)
+scraper.run()
 

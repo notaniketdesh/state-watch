@@ -13,7 +13,10 @@ class Scraper:
         self.driver = webdriver.Chrome(executable_path=self.PATH, options=self.options)
         self.driver.get(f'https://ecos.fws.gov/ecp/report/species-listings-by-state?stateAbbrev={state}&statusCategory=Listed&s8fid=112761032792&s8fid=112762573902')
 
-    
+    def run(self):
+        check_box = self.driver.find_element_by_xpath('//*[@id="species-listings-by-state"]/div/div/div/div[1]/label/input')
+        check_box.click()
+        print('worked!')
 
         
 

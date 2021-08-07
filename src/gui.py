@@ -30,7 +30,7 @@ class Window:
 
         desc = Label(
             self.window, 
-            text='This program will give you information\nabout the 5 most endangered species in your state.', 
+            text='This program will give you information\nabout the 10 most endangered species in your state.', 
             font=('Arial', 20, 'bold')
         )
         desc.place(x=10, y=30)
@@ -62,7 +62,7 @@ class Window:
         submit_button.place(x=60)
         submit_button.pack(side=RIGHT)
     
-    def create_info_page(self):
+    def create_info_page(self, scraper):
         words = self.title.split(' ')
         state_header = Label(
             self.window,
@@ -78,6 +78,29 @@ class Window:
         )
         column_headers.place(y=100)
         column_headers.pack()
+
+        s_names_txt = '\n'.join(scraper.get_col('scientific'))
+        c_names_txt = '\n'.join(scraper.get_col('common'))
+        status_txt = '\n'.join(scraper.get_col('status'))
+
+        scientific_names = Label(
+            self.window,
+            text=s_names_txt,
+            font=('Arial', 13, 'bold')
+        )
+        scientific_names.place(x=40, y=80)
+        common_names = Label(
+            self.window,
+            text=c_names_txt,
+            font=('Arial', 13, 'bold')
+        )
+        common_names.place(x=400, y=80)
+        statuses = Label(
+            self.window,
+            text=status_txt,
+            font=('Arial', 13, 'bold')
+        )
+        statuses.place(x=750, y=80)
 
 
  

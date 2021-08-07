@@ -32,11 +32,11 @@ class Scraper:
         dfs = pd.read_html(str(self.get_table_list()))
         df = pd.DataFrame(dfs[0])
         if col.lower() == 'common':
-            return [df['Common Name']]
+            return list(df['Common Name'])
         elif col.lower() == 'scientific':
-            return [df['Scientific Name']]
+            return list(df['Scientific Name'])
         else:
-            return [df['ESA Listing Status']]
+            return list(df['ESA Listing Status'])
 
 
         

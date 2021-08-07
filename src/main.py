@@ -1,9 +1,9 @@
 from gui import Window
+from scraper import Scraper
 
-def main():
-    window = Window(700, 400, "Endangered Species")
-    window.create_submit_page()
-    window.display()
+window = Window(700, 400, "Endangered Species")
+window.create_submit_page()
+window.display()
 
-if __name__ == '__main__':
-    main()
+test = Scraper('NJ')
+

@@ -11,10 +11,11 @@ class Window:
     def display(self):
         self.window.mainloop()
     
-    def submit(self):
+    def get_submit(self):
         state = self.enter_state.get()
+        self.window.destroy()
         return state.upper()
-    
+        
     def create_submit_page(self):
         header = Label(
             self.window, 
@@ -52,7 +53,7 @@ class Window:
             self.window,
             text='Submit',
             font=('Arial', 12, 'bold'),
-            command=self.submit,
+            command=self.get_submit,
             height=3,
             width=10
         )
